@@ -1,12 +1,12 @@
 // Portfolio configuration
-const config = {
+export const config = {
     name: "Your Name",
     title: "Senior Product Manager",
     subtitle: "Hover to preview • Click to learn more"
 };
 
 // Card content
-const cards =[
+export const cards =[
   {
     category: "Bio",
     title: "About Me",
