@@ -93,9 +93,7 @@
             border-radius: 8px;
             padding: 2rem;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            justify-content: left;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
@@ -117,7 +115,7 @@
         }
         
         .tile-front h2 {
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: 800;
             text-transform: uppercase;
 			justify-content:left;
