@@ -26,7 +26,7 @@ const Title = () => {
 // In components.js
 const Tile = ({ title, content, type }) => {
     return (
-        <div className="tile" data-type={type || 'default'}>  // Added default fallback
+        <div className="tile" data-type={type || 'default'}>  
             <div className="tile-front">
                 <h2>{title}</h2>
             </div>
@@ -45,7 +45,7 @@ const TileContainer = () => {
                     key={tile.id}
                     title={tile.title}
                     content={tile.content}
-                    type={tile.type}  // Make sure this matches your data structure
+                    type={tile.type} 
                 />
             ))}
         </div>
