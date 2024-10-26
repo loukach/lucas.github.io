@@ -1,6 +1,6 @@
 const Title = () => {
     return (
-        <h1 className="main-title">Cards Against Developers</h1>
+        <h1 className="main-title">Pst pst, hey wanna product?</h1>
     );
 };
 
