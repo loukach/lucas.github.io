@@ -1,6 +1,12 @@
 import PortfolioCards from './components.js';
 import { config, cards } from './data.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 window.portfolioData = { config, cards };
 
-ReactDOM.render(<PortfolioCards />, document.getElementById('root'));
+const App = () => {
+  return <PortfolioCards />;
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
