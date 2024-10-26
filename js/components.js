@@ -1,57 +1,52 @@
-// Modal Component
-const Modal = ({ card, onClose }) => {
-    if (!card) return null;
-    
-    return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 modal-overlay" 
-             onClick={onClose}>
-            <div className="bg-white rounded-lg p-8 max-w-2xl w-full shadow-xl" 
-                 onClick={e => e.stopPropagation()}>
-                <div className="flex justify-between items-start mb-6">
-                    <div>
-                        <span className="text-sm font-semibold text-blue-600 mb-2">{card.category}</span>
-                        <h2 className="text-3xl font-bold">{card.title}</h2>
-                    </div>
-                    <button 
-                        onClick={onClose}
-                        className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
-                    >
-                        ×
-                    </button>
-                </div>
-                <div className="prose max-w-none whitespace-pre-line">
-                    {card.fullContent}
-                </div>
-            </div>
-        </div>
-    );
-};
+import React, { useState } from 'react';
 
-// Card Component
 const Card = ({ category, title, text, fullContent, onClick }) => {
-    return (
-        <div 
-            className="group h-48 w-48 [perspective:1000px] cursor-pointer card-hover-effect"
-            onClick={() => onClick({ category, title, text, fullContent })}
-        >
-            <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                {/* Front of card */}
-                <div className="absolute h-full w-full bg-black text-white rounded-lg p-4 [backface-visibility:hidden]">
-                    <div className="text-sm font-semibold text-blue-300 mb-2">{category}</div>
-                    <h2 className="text-xl font-bold text-center mt-8">{title}</h2>
-                </div>
-                
-                {/* Back of card */}
-                <div className="absolute h-full w-full bg-white text-black rounded-lg p-4 [transform:rotateY(180deg)] [backface-visibility:hidden] border-2 border-black">
-                    <p className="text-center mt-8 text-sm">{text}</p>
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="bg-white rounded-lg shadow-md p-4 cursor-pointer" onClick={onClick}>
+      <p className="text-gray-500">{category}</p>
+      <h3 className="text-lg font-medium">{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
 };
 
-const PortfolioCards = ({ config, cards }) => {
+const Modal = ({ card, onClose }) => {
+  if (!card) return null;
+
+  return (
+    <div className="fixed z-10 inset-0 overflow-y-auto">
+      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+          <div>
+            <div className="mt-3 text-center sm:mt-5">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">{card.title}</h3>
+              <div className="mt-2">
+                <div dangerouslySetInnerHTML={{ __html: card.fullContent }} />
+              </div>
+            </div>
+          </div>
+          <div className="mt-5 sm:mt-6">
+            <button
+              type="button"
+              className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+              onClick={onClose}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const PortfolioCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
+  const { config, cards } = window.portfolioData;
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
@@ -63,7 +58,7 @@ const PortfolioCards = ({ config, cards }) => {
             <Card
               key={index}
               {...card}
-              onClick={setSelectedCard}
+              onClick={() => setSelectedCard(card)}
             />
           ))}
         </div>
@@ -75,3 +70,5 @@ const PortfolioCards = ({ config, cards }) => {
     </div>
   );
 };
+
+export default PortfolioCards;
