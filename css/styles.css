@@ -1,0 +1,17 @@
+/* Custom animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Custom styles that complement Tailwind */
+.modal-overlay {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* You can override or extend Tailwind classes here */
+.card-hover-effect {
+    transition: transform 0.3s ease-out;
+}
+
+/* Add any additional custom styles you need */
