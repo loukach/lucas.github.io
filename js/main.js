@@ -1,16 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PortfolioCards from './components.js';
-import { config, cards } from './data.js';
+const { config, cards } = window.portfolioData;
 
-window.portfolioData = { config, cards };
-
-const App = () => {
-  return (
-    <div>
-      <PortfolioCards />
-    </div>
-  );
-};
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <PortfolioCards config={config} cards={cards} />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
