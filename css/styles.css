@@ -15,7 +15,7 @@ body {
 }
 
 .app {
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -71,11 +71,11 @@ body {
 }
 
 .tile-front::before {
-    content: "Cards Against Developers";
+    content: "lucas's portfolio";
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     opacity: 0.7;
     text-transform: uppercase;
     letter-spacing: 1px;
