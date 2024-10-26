@@ -12,7 +12,7 @@
         }
         
         .app {
-            max-width: 1800px;
+            max-width: 80%;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -30,14 +30,15 @@
         .tile-container {
             display: flex;
             justify-content: center;
-            gap: 4rem;
+            gap: 1rem;
             padding: 1rem;
             perspective: 1000px;
+			flex-wrap: wrap; /* Allow wrapping for responsive layout */
         }
         
         .tile {
-            width: 400px;
-            height: 500px;
+            width: 200px;
+            height: 550px;
             position: relative;
             cursor: pointer;
             transform-style: preserve-3d;
