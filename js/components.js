@@ -1,6 +1,6 @@
-class Card extends React.Component {
-  render() {
-    const { category, title, text, fullContent, onClick } = this.props;
+var Card = React.createClass({
+  render: function() {
+    var { category, title, text, fullContent, onClick } = this.props;
     return (
       <div className="bg-white rounded-lg shadow-md p-4 cursor-pointer" onClick={onClick}>
         <p className="text-gray-500">{category}</p>
@@ -9,30 +9,29 @@ class Card extends React.Component {
       </div>
     );
   }
-}
+});
 
-class Modal extends React.Component {
-  render() {
-    const { card, onClose } = this.props;
+var Modal = React.createClass({
+  render: function() {
+    var { card, onClose } = this.props;
     if (!card) return null;
 
     return (
       // ... modal content
     );
   }
-}
+});
 
-class PortfolioCards extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+var PortfolioCards = React.createClass({
+  getInitialState: function() {
+    return {
       selectedCard: null,
     };
-  }
+  },
 
-  render() {
-    const { config, cards } = this.props;
-    const { selectedCard } = this.state;
+  render: function() {
+    var { config, cards } = this.props;
+    var { selectedCard } = this.state;
 
     return (
       <div className="min-h-screen bg-gray-100 p-8">
@@ -56,4 +55,4 @@ class PortfolioCards extends React.Component {
       </div>
     );
   }
-}
+});
