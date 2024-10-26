@@ -1,28 +1,17 @@
-// Portfolio configuration
-const config = {
-    name: "Your Name",
-    title: "Senior Product Manager",
-    subtitle: "Hover to preview • Click to learn more"
-};
-
-// Card content
-const cards = [
+const tilesData = [
     {
-        category: "Bio",
-        title: "About Me",
-        text: "Senior Product Manager with expertise in B2B SaaS",
-        fullContent: `[Your brief bio here]
-
-Key Points:
-• X years of experience in product management
-• Led successful launches of Y major products
-• Expertise in B2B SaaS and enterprise solutions`
+        id: 1,
+        title: "Feature One",
+        content: "This is the first feature of our amazing application. It does something really cool that you'll love."
     },
-    // ... Add other cards here
+    {
+        id: 2,
+        title: "Feature Two",
+        content: "Our second feature is even better! It makes everything easier and more efficient."
+    },
+    {
+        id: 3,
+        title: "Feature Three",
+        content: "The third feature completes the package, providing everything you need for success."
+    }
 ];
-
-// Export for use in components
-window.portfolioData = {
-    config,
-    cards
-};
