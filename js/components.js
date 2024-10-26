@@ -26,7 +26,7 @@ const Title = () => {
 const Tile = ({ title, content }) => {
     return (
         <div className="tile">
-            <div className="tile-front">
+            <div className="tile-front" data-type={type}>
                 <h2>{title}</h2>
             </div>
             <div className="tile-back">

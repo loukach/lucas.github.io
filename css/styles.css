@@ -1,107 +1,98 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #2c3e50;
-            min-height: 100vh;
-        }
-        
-        .app {
-            max-width: 80%;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .main-title {
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .tile-container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
-            perspective: 1000px;
-			flex-wrap: wrap; /* Allow wrapping for responsive layout */
-        }
-        
-        .tile {
-            width: 300px;
-            height: 472px;
-            position: relative;
-            cursor: pointer;
-            transform-style: preserve-3d;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .tile:hover {
-            transform: rotateY(180deg);
-        }
-        
-        .tile-front,
-        .tile-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 8px;
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .tile-front {
-            background-color: #000000;
-            color: #ffffff;
-        }
-        
-        .tile-front::before {
-            content: "lucas's portfolio";
-            position: absolute;
-            bottom: 1rem;
-            left: 1rem;
-            font-size: 0.6rem;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .tile-front h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-			justify-content:left;
-            letter-spacing: 1px;
-            line-height: 1.2;
-            max-width: 90%;
-        }
-        
-        .tile-back {
-            background-color: #ffffff;
-            color: #000000;
-            transform: rotateY(180deg);
-        }
-        
-        .tile-back p {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1.4;
-            max-width: 90%;
-        }
+ /* Add at the start of your styles.css */
+:root {
+    /* Primary colors for borders and accents */
+    --autumn-orange: #E65D20;     
+    --autumn-amber: #FFA000;      
+    --autumn-rose: #D84654;       
+    
+    /* Light backgrounds */
+    --autumn-orange-light: #FFF1EC;
+    --autumn-amber-light: #FFF8E1;
+    --autumn-rose-light: #FFF0F0;
+    
+    /* Supporting colors */
+    --autumn-brown: #8B4513;     
+    --autumn-cream: #FFF8DC;      
+    --autumn-gray: #4A4A4A;       
+}
+
+/* Update your existing tile styles */
+.tile {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 0.8s;
+}
+
+/* Add type-specific styling */
+.tile[data-type="achievement"] {
+    background-color: var(--autumn-orange-light);
+    border-left: 4px solid var(--autumn-orange);
+}
+
+.tile[data-type="skill"] {
+    background-color: var(--autumn-amber-light);
+    border-left: 4px solid var(--autumn-amber);
+}
+
+.tile[data-type="feedback"] {
+    background-color: var(--autumn-rose-light);
+    border-left: 4px solid var(--autumn-rose);
+}
+
+.tile-front,
+.tile-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tile-front {
+    background-color: inherit; /* This will inherit the type-specific background */
+}
+
+.tile-front h2 {
+    color: var(--autumn-brown);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tile-back {
+    background-color: var(--autumn-cream);
+    transform: rotateY(180deg);
+}
+
+.tile-back p {
+    color: var(--autumn-gray);
+    line-height: 1.6;
+}
+
+/* Your existing hover effect */
+.tile:hover {
+    transform: translateY(-5px) rotateY(180deg);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+}
+
+/* Update the link style */
+.tile-front::before {
+    content: "www.linkedin.com/in/lucasgros/";
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.6rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--autumn-gray);
+}
+ 
 
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.75);
