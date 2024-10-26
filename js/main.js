@@ -1,12 +1,6 @@
-import { config, cards } from './data.js';
 import PortfolioCards from './components.js';
+import { config, cards } from './data.js';
 
-const CardGrid = () => {
-  return (
-    <div>
-      <PortfolioCards config={config} cards={cards} />
-    </div>
-  );
-};
+window.portfolioData = { config, cards };
 
-ReactDOM.render(<CardGrid />, document.getElementById('root'));
+ReactDOM.render(<PortfolioCards />, document.getElementById('root'));
