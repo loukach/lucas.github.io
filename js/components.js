@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { config, cards } from './data.js';
 
 const Card = ({ category, title, text, fullContent, onClick }) => {
   return (
