@@ -1,14 +1,18 @@
 const Title = () => {
     return (
-        <h1 className="main-title">Welcome to My Simple Website</h1>
+        <h1 className="main-title">Cards Against Developers</h1>
     );
 };
 
 const Tile = ({ title, content }) => {
     return (
         <div className="tile">
-            <h2>{title}</h2>
-            <p>{content}</p>
+            <div className="tile-front">
+                <h2>{title}</h2>
+            </div>
+            <div className="tile-back">
+                <p>{content}</p>
+            </div>
         </div>
     );
 };

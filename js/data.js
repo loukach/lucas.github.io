@@ -1,17 +1,17 @@
 const tilesData = [
     {
         id: 1,
-        title: "Feature One",
-        content: "This is the first feature of our amazing application. It does something really cool that you'll love."
+        title: "The Perfect Code",
+        content: "Does not exist. But we keep trying anyway."
     },
     {
         id: 2,
-        title: "Feature Two",
-        content: "Our second feature is even better! It makes everything easier and more efficient."
+        title: "Git Push Force",
+        content: "The fastest way to become the least popular person in your team."
     },
     {
         id: 3,
-        title: "Feature Three",
-        content: "The third feature completes the package, providing everything you need for success."
+        title: "Documentation",
+        content: "That thing you'll write 'later' but later never comes."
     }
 ];
