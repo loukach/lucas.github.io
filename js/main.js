@@ -1,14 +1,12 @@
-// Main CardGrid Component
-const CardGrid = () => {
-    const [selectedCard, setSelectedCard] = React.useState(null);
-    const { config, cards } = window.portfolioData;
+import { config, cards } from './data.js';
+import PortfolioCards from './components.js';
 
-    return (
-        <div>
-            <PortfolioCards config={config} cards={cards} />
-        </div>
-    );
+const CardGrid = () => {
+  return (
+    <div>
+      <PortfolioCards config={config} cards={cards} />
+    </div>
+  );
 };
 
-// Render the application
 ReactDOM.render(<CardGrid />, document.getElementById('root'));
