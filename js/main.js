@@ -6,7 +6,11 @@ import { config, cards } from './data.js';
 window.portfolioData = { config, cards };
 
 const App = () => {
-  return <PortfolioCards />;
+  return (
+    <div>
+      <PortfolioCards />
+    </div>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
