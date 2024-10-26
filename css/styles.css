@@ -1,17 +1,53 @@
-/* Custom animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Custom styles that complement Tailwind */
-.modal-overlay {
-    animation: fadeIn 0.3s ease-out;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
 }
 
-/* You can override or extend Tailwind classes here */
-.card-hover-effect {
-    transition: transform 0.3s ease-out;
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-/* Add any additional custom styles you need */
+.main-title {
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.tile {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+}
+
+.tile h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.tile p {
+    color: #666;
+    font-size: 1rem;
+}
